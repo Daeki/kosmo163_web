@@ -8,13 +8,40 @@ import com.winter.app.util.DBConnection;
 
 public class DepartmentDAO {
 	
+	public void detail() throws Exception {
+		DBConnection connection = new DBConnection();
+		Connection con = connection.getConnection();
+		
+		String sql = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID=100";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		ResultSet rs = st.executeQuery();
+		
+		if(rs.next()) {
+			String name = rs.getString("DEPARTMENT_NAME");
+			System.out.println(name);
+		}else {
+			System.out.println("부서가 없다");
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+	}
+	
 	public void list() throws Exception {
 		//1. DB연결
 		DBConnection connection = new DBConnection();
 		Connection con = connection.getConnection();
 		
 		//2. 쿼리문 작성
-		String sql = "SELECT * FROM DEPARTMENTS";
+		String sql =""" 
+				SELECT * FROM DEPARTMENTS
+				ORDER BY DEPARTMENT_ID DESC
+				""";
+				
 		
 		//3. 쿼리문 미리 전송
 		PreparedStatement st = con.prepareStatement(sql);
