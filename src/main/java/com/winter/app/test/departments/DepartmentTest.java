@@ -8,7 +8,7 @@ public class DepartmentTest {
 		
 		DepartmentDAO dao = new DepartmentDAO();
 		try {
-			dao.detail();
+			dao.detail(110);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

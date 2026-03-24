@@ -8,13 +8,16 @@ import com.winter.app.util.DBConnection;
 
 public class DepartmentDAO {
 	
-	public void detail() throws Exception {
+	public void detail(int departmentId) throws Exception {
 		DBConnection connection = new DBConnection();
 		Connection con = connection.getConnection();
 		
-		String sql = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID=100";
+		String sql = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID =?";
 		
 		PreparedStatement st = con.prepareStatement(sql);
+		
+		//? 세팅
+		st.setInt(1, departmentId);
 		
 		ResultSet rs = st.executeQuery();
 		
