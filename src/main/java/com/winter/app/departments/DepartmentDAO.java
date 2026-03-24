@@ -7,9 +7,14 @@ import java.sql.ResultSet;
 import com.winter.app.util.DBConnection;
 
 public class DepartmentDAO {
+	private DBConnection connection;
+	
+	public DepartmentDAO() {
+		this.connection = new DBConnection();
+	}
 	
 	public void detail(int departmentId) throws Exception {
-		DBConnection connection = new DBConnection();
+		
 		Connection con = connection.getConnection();
 		
 		String sql = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID =?";
@@ -36,7 +41,7 @@ public class DepartmentDAO {
 	
 	public void list() throws Exception {
 		//1. DB연결
-		DBConnection connection = new DBConnection();
+		
 		Connection con = connection.getConnection();
 		
 		//2. 쿼리문 작성
