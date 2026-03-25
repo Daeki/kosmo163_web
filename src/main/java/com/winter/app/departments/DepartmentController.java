@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -29,10 +30,16 @@ public class DepartmentController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println(request.getMethod());
+		System.out.println(request.getRemoteAddr());
+		System.out.println(request.getRequestURL());
+		
 		DepartmentDAO dao = new DepartmentDAO();
 		
 		try {
 			ArrayList<DepartmentDTO> ar = dao.list();
+			request.setAttribute("list", ar);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
