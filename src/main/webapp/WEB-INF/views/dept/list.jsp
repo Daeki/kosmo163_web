@@ -27,7 +27,7 @@
 				<c:forEach items="${list}" var="d">
 					<tr>
 						<td>${d.departmentId}</td>
-						<td>${d.departmentName}</td>
+						<td><a href="/dept/detail?departmentId=${d.departmentId}">${d.departmentName}</a></td>
 					</tr>
 					<!-- 
 						getter의 이름 : getter메서드에서

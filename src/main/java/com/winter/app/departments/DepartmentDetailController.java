@@ -28,9 +28,10 @@ public class DepartmentDetailController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DepartmentDAO departmentDAO = new DepartmentDAO();
-		
+		String id = request.getParameter("departmentId");
+		int n = Integer.parseInt(id);
 		try {
-			DepartmentDTO departmentDTO = departmentDAO.detail(100);
+			DepartmentDTO departmentDTO = departmentDAO.detail(n);
 			request.setAttribute("dto", departmentDTO);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
