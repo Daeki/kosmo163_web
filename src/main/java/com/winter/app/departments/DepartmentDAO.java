@@ -14,7 +14,7 @@ public class DepartmentDAO {
 		this.connection = new DBConnection();
 	}
 	
-	public void create(DepartmentDTO departmentDTO) throws Exception {
+	public int create(DepartmentDTO departmentDTO) throws Exception {
 		Connection con = connection.getConnection();
 		String sql="""
 					INSERT INTO DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID)
@@ -28,12 +28,12 @@ public class DepartmentDAO {
 		
 		int result = st.executeUpdate();
 		
-		System.out.println(result);
+		
 		
 		st.close();
 		con.close();
 		
-		
+		return result;
 	}
 	
 	public DepartmentDTO detail(int departmentId) throws Exception {

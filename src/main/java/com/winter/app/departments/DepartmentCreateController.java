@@ -37,7 +37,29 @@ public class DepartmentCreateController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String name = request.getParameter("departmentName");
+		String m = request.getParameter("managerId");
+		String l = request.getParameter("locationId");
+		
+		DepartmentDTO departmentDTO = new DepartmentDTO();
+		departmentDTO.setDepartmentName(name);
+		departmentDTO.setManagerId(Integer.parseInt(m));
+		departmentDTO.setLocationId(Integer.parseInt(l));
+		
+		DepartmentDAO departmentDAO = new DepartmentDAO();
+		try {
+			int result = departmentDAO.create(departmentDTO);
+			if(result > 0) {
+				
+			}else {
+				
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }
