@@ -14,7 +14,11 @@
 	<h5>Locale C</h5>
 
 	<h5>Home B</h5>
-
+	
+	<div>
+		<a href="/dept/create">부서등록</a>
+	</div>
+	
 	<div>
 		<table>
 			<thead>
