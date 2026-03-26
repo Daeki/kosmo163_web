@@ -50,6 +50,7 @@ public class DepartmentCreateController extends HttpServlet {
 		try {
 			int result = departmentDAO.create(departmentDTO);
 			if(result > 0) {
+				response.sendRedirect("/dept/list");
 				
 			}else {
 				
