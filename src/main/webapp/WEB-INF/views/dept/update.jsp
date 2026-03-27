@@ -10,6 +10,7 @@
 	<h1>부서 정보 수정</h1>
 	
 	<form action="./update" method="post">
+		<input type="hidden" name="departmentId" value="${dto.departmentId}">
 		<div>
 			<label>부서명</label>
 			<!-- DTO의 setter의 이름과 동일하게 -->

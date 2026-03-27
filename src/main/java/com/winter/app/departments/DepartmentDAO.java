@@ -14,6 +14,32 @@ public class DepartmentDAO {
 		this.connection = new DBConnection();
 	}
 	
+	public int update(DepartmentDTO departmentDTO)throws Exception{
+		Connection con = connection.getConnection();
+		String sql = """
+					UPDATE DEPARTMENTS
+					SET 
+						DEPARTMENT_NAME=?,
+						MANAGER_ID=?,
+						LOCATION_ID=?
+					WHERE DEPARTMENT_ID=?	
+					
+				""";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, departmentDTO.getDepartmentName());
+		st.setInt(2, departmentDTO.getManagerId());
+		st.setInt(3, departmentDTO.getLocationId());
+		st.setInt(4, departmentDTO.getDepartmentId());
+		
+		int result = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		
+		return result;
+		
+	}
+	
 	public int delete(DepartmentDTO departmentDTO) throws Exception {
 		Connection con = connection.getConnection();
 		
