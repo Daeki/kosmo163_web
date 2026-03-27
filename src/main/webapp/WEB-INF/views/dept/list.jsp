@@ -16,7 +16,7 @@
 	<h5>Home B</h5>
 	
 	<div>
-		<a href="/dept/create">부서등록</a>
+		<a href="./create">부서등록</a>
 	</div>
 	
 	<div>
@@ -31,7 +31,7 @@
 				<c:forEach items="${list}" var="d">
 					<tr>
 						<td>${d.departmentId}</td>
-						<td><a href="/dept/detail?departmentId=${d.departmentId}">${d.departmentName}</a></td>
+						<td><a href="./detail?departmentId=${d.departmentId}">${d.departmentName}</a></td>
 					</tr>
 					<!-- 
 						getter의 이름 : getter메서드에서

@@ -9,7 +9,7 @@
 <body>
 	<h3>부서 등록 페이지</h3>
 	
-	<form action="/dept/create" method="post">
+	<form action="./create" method="post">
 		<div>
 			<label>부서명</label>
 			<!-- DTO의 setter의 이름과 동일하게 -->
