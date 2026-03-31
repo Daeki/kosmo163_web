@@ -40,8 +40,30 @@ public class EmployeeLoginController extends HttpServlet {
 		String id= request.getParameter("employeeId");
 		String pw = request.getParameter("password");
 		int i = Integer.parseInt(id);
-		System.out.println(i);
-		System.out.println(pw);
+		
+		EmployeeDTO employeeDTO = new EmployeeDTO();
+		employeeDTO.setEmployeeId(i);
+		employeeDTO.setPassword(pw);
+		
+		EmployeeDAO employeeDAO = new EmployeeDAO();
+		try {
+			employeeDTO = employeeDAO.login(employeeDTO);
+			
+			if(employeeDTO != null) {
+				System.out.println("ok");
+			}else {
+				System.out.println("fail");
+			}
+			
+			request.setAttribute("dto", employeeDTO);
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+			view.forward(request, response);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
