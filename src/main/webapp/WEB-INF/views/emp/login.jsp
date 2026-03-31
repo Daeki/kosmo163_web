@@ -8,6 +8,12 @@
 </head>
 <body>
 	<h1>Login Form Page</h1>
+	<form action="./login" method="post">
+		
+		<input type="text" name="employeeId">
+		<input type="password" name="password">
+		<button>Login</button>
+	</form>
 
 </body>
 </html>

@@ -37,8 +37,11 @@ public class EmployeeLoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String id= request.getParameter("employeeId");
+		String pw = request.getParameter("password");
+		int i = Integer.parseInt(id);
+		System.out.println(i);
+		System.out.println(pw);
 	}
 
 }
