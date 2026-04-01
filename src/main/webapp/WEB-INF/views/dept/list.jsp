@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/views/temp/nav.jsp"></c:import>
 	<h4>부서 리스트</h4>
 	<h5>Locale A</h5>
 
