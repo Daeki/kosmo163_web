@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:import url="/WEB-INF/views/temp/head.jsp"></c:import>
 </head>
 <body class="d-flex flex-column h-100">
 	<main class="flex-shrink-0">
@@ -22,9 +23,7 @@
                 
                 </div>        
 			</div>
-		</section>
-		
-		
+		</section>		
 	</main>
 	<c:import url="/WEB-INF/views/temp/footer.jsp"></c:import>
 </body>
