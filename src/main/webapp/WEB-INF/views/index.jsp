@@ -13,11 +13,14 @@
 		<a href="/country/list">국가 관리</a>
 		
 		<c:if test="${empty dto}">
-		<a href="/emp/login">Login</a>
+			<a href="/emp/login">Login</a>
 		</c:if>
 		
 		<c:if test="${not empty dto}">
-		<a href="/emp/logout">Logout</a>
+			<a href="/emp/logout">Logout</a>
+			<a href="/emp/mypage">Mypage</a>
+			<h3>${dto.employeeId}</h3>
+			<h3>${dto.firstName}</h3>
 		</c:if>
 		
 	</body>
